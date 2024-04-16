@@ -1,0 +1,11 @@
+import pandas as pd
+
+# Cargar el archivo .xlsx
+archivo = "tu_archivo.xlsx"
+datos = pd.read_excel(archivo)
+
+# Filtrar los datos que tienen "Campylobacterales" en la columna "CRISPR Array – Genome affiliation"
+datos_campylobacterales = datos[datos["CRISPR Array – Genome affiliation"].str.contains("Campylobacterales", na=False)]
+
+# Mostrar los datos que cumplen con la condición
+print(datos_campylobacterales)
