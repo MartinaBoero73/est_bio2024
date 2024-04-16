@@ -1,7 +1,13 @@
 import pandas as pd
+import sys
 
 # Cargar el archivo .xlsx
-archivo = "tu_archivo.xlsx"
+archivo = "41564_2019_510_MOESM8_ESM.xlsx"
+if 'google.colab' in sys.modules:
+    from google.colab import drive
+    drive.mount('/content/drive')
+    archivo = '/content/drive/MyDrive/BIOINFORMÁTICA/1C 2024/estructurasBiomoleculares/TIF/41564_2019_510_MOESM8_ESM.xlsx'
+ 
 datos = pd.read_excel(archivo)
 
 # Filtrar los datos que tienen "Campylobacterales" en la columna "CRISPR Array – Genome affiliation"
